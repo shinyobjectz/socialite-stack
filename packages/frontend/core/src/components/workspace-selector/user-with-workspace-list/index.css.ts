@@ -72,3 +72,21 @@ export const loadingWrapper = style({
   alignItems: 'center',
   justifyContent: 'center',
 });
+
+export const container = style({
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 8,
+  padding: '10px 8px 0px 8px',
+});
+
+export const signInItem = style([
+  menuItem,
+  {
+    padding: '8px',
+  },
+]);
+
+export const signInText = signInTextPrimary;
+export const signInDescription = signInTextSecondary;

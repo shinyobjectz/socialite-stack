@@ -6,18 +6,18 @@ To run AFFiNE Desktop Client Application locally, run the following commands:
 
 ```sh
 # in repo root
-yarn install
-yarn affine @affine/native build
-yarn dev
+bun install
+bun affine @affine/native build
+bun dev
 
 # in packages/frontend/apps/electron
-yarn generate-assets
-yarn dev # or yarn prod for production build
+bun generate-assets
+bun dev # or bun prod for production build
 ```
 
 ## Troubleshooting
 
-If you have trouble building electron during `yarn install`, try setting mirror environment variable:
+If you have trouble building electron during `bun install`, try setting mirror environment variable:
 
 ```sh
 export ELECTRON_MIRROR="https://registry.npmmirror.com/-/binary/electron/"

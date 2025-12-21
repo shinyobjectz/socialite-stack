@@ -2,9 +2,9 @@ import { readFileSync } from 'node:fs';
 import { parse } from 'node:path';
 
 import { type Path, ProjectRoot } from './path';
-import type { CommonPackageJsonContent, YarnWorkspaceItem } from './types';
+import type { CommonPackageJsonContent, BunWorkspaceItem } from './types';
 import type { Workspace } from './workspace';
-import { PackageList, type PackageName } from './yarn';
+import { PackageList, type PackageName } from './bun';
 
 export function readPackageJson(path: Path): CommonPackageJsonContent {
   const content = readFileSync(path.join('package.json').toString(), 'utf-8');
@@ -51,7 +51,7 @@ export class Package {
     this._workspace = workspace;
   }
 
-  constructor(name: PackageName, meta?: YarnWorkspaceItem) {
+  constructor(name: PackageName, meta?: BunWorkspaceItem) {
     this.name = name as PackageName;
     meta ??= PackageList.find(item => item.name === name)!;
 

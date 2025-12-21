@@ -1,0 +1,16 @@
+{
+  "name": "@socialite/db",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "convex dev",
+    "deploy": "convex deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "convex": "^1.11.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

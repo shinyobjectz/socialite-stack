@@ -6,41 +6,42 @@ import { type WorkspaceMetadata } from '@affine/core/modules/workspace';
 import { ServerFeature } from '@affine/graphql';
 import { useI18n } from '@affine/i18n';
 import { track } from '@affine/track';
-import { Logo1Icon } from '@blocksuite/icons/rc';
+import { SocialiteLockup } from '@affine/component';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 import { AddWorkspace } from './add-workspace';
+import { AddServerItem } from './add-server';
 import * as styles from './index.css';
-import { AFFiNEWorkspaceList } from './workspace-list';
+import { UserAccountItem } from './user-account';
+import { WorkspaceList } from './workspace-list';
 
-export const SignInItem = () => {
-  const globalDialogService = useService(GlobalDialogService);
-
+const SignInItem = () => {
   const t = useI18n();
-
-  const onClickSignIn = useCallback(() => {
-    track.$.navigationPanel.workspaceList.requestSignIn();
-    globalDialogService.open('sign-in', {});
-  }, [globalDialogService]);
+  const globalDialogService = useService(GlobalDialogService);
 
   return (
     <MenuItem
-      className={styles.menuItem}
-      onClick={onClickSignIn}
-      data-testid="cloud-signin-button"
+      className={styles.signInItem}
+      onClick={useCallback(() => {
+        globalDialogService.unstable_open('auth', {
+          state: 'signIn',
+        });
+      }, [globalDialogService])}
     >
       <div className={styles.signInWrapper}>
         <div className={styles.iconContainer}>
-          <Logo1Icon />
+          <SocialiteLockup wordmarkHeight={20} markSize={20} decorative />
         </div>
 
         <div className={styles.signInTextContainer}>
-          <div className={styles.signInTextPrimary}>
-            {t['com.affine.workspace.cloud.auth']()}
+          <div className={styles.signInText}>
+            {t['com.affine.workspace.user-with-workspace-list.sign-in']()}
           </div>
-          <div className={styles.signInTextSecondary}>
-            {t['com.affine.workspace.cloud.description']()}
+          <div className={styles.signInDescription}>
+            {t[
+              'com.affine.workspace.user-with-workspace-list.sign-in-description'
+            ]()}
           </div>
         </div>
       </div>
@@ -48,89 +49,34 @@ export const SignInItem = () => {
   );
 };
 
-interface UserWithWorkspaceListProps {
-  onEventEnd?: () => void;
-  onClickWorkspace?: (workspace: WorkspaceMetadata) => void;
-  onCreatedWorkspace?: (payload: {
-    metadata: WorkspaceMetadata;
-    defaultDocId?: string;
-  }) => void;
-  showEnableCloudButton?: boolean;
-}
-
 export const UserWithWorkspaceList = ({
-  onEventEnd,
-  onClickWorkspace,
-  onCreatedWorkspace,
-  showEnableCloudButton,
-}: UserWithWorkspaceListProps) => {
-  const globalDialogService = useService(GlobalDialogService);
-  const session = useLiveData(useService(AuthService).session.session$);
-  const defaultServerService = useService(DefaultServerService);
-
-  const isAuthenticated = session.status === 'authenticated';
-
-  const openSignInModal = useCallback(() => {
-    globalDialogService.open('sign-in', {});
-  }, [globalDialogService]);
-
-  const onNewWorkspace = useCallback(() => {
-    const enableLocalWorkspace =
-      BUILD_CONFIG.isNative ||
-      defaultServerService.server.config$.value.features.includes(
-        ServerFeature.LocalWorkspace
-      );
-    if (!isAuthenticated && !enableLocalWorkspace) {
-      return openSignInModal();
-    }
-    track.$.navigationPanel.workspaceList.createWorkspace();
-    globalDialogService.open('create-workspace', {}, payload => {
-      if (payload) {
-        onCreatedWorkspace?.(payload);
-      }
-    });
-    onEventEnd?.();
-  }, [
-    globalDialogService,
-    defaultServerService,
-    isAuthenticated,
-    onCreatedWorkspace,
-    onEventEnd,
-    openSignInModal,
-  ]);
-
-  const onAddWorkspace = useCallback(() => {
-    track.$.navigationPanel.workspaceList.createWorkspace({
-      control: 'import',
-    });
-    globalDialogService.open('import-workspace', undefined, payload => {
-      if (payload) {
-        onCreatedWorkspace?.({ metadata: payload.workspace });
-      }
-    });
-    onEventEnd?.();
-  }, [globalDialogService, onCreatedWorkspace, onEventEnd]);
+  onSettingClick,
+  onAddWorkspaceClick,
+  workspaces,
+}: {
+  onSettingClick: (workspaceMetadata: WorkspaceMetadata) => void;
+  onAddWorkspaceClick: () => void;
+  workspaces: WorkspaceMetadata[];
+}) => {
+  const authService = useService(AuthService);
+  const loginStatus = useLiveData(authService.session.status$);
+  const serverService = useService(DefaultServerService);
+  const serverConfig = useLiveData(serverService.server.config$);
 
   return (
-    <>
-      <ScrollableContainer
-        className={styles.workspaceScrollArea}
-        viewPortClassName={styles.workspaceScrollAreaViewport}
-        scrollBarClassName={styles.scrollbar}
-        scrollThumbClassName={styles.scrollbarThumb}
-      >
-        <AFFiNEWorkspaceList
-          onEventEnd={onEventEnd}
-          onClickWorkspace={onClickWorkspace}
-          showEnableCloudButton={showEnableCloudButton}
-        />
-      </ScrollableContainer>
-      <div className={styles.workspaceFooter}>
-        <AddWorkspace
-          onAddWorkspace={onAddWorkspace}
-          onNewWorkspace={onNewWorkspace}
-        />
-      </div>
-    </>
+    <ScrollableContainer
+      className={styles.container}
+      scrollBarClassName={styles.scrollbar}
+    >
+      {loginStatus === 'authenticated' ? <UserAccountItem /> : <SignInItem />}
+
+      <WorkspaceList onSettingClick={onSettingClick} workspaces={workspaces} />
+
+      <AddWorkspace onClick={onAddWorkspaceClick} />
+
+      {serverConfig.features.includes(ServerFeature.MultiServer) ? (
+        <AddServerItem />
+      ) : null}
+    </ScrollableContainer>
   );
 };

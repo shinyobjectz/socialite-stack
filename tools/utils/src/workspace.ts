@@ -2,7 +2,8 @@ import { Logger } from './logger';
 import { Package, readPackageJson } from './package';
 import { ProjectRoot } from './path';
 import type { CommonPackageJsonContent } from './types';
-import { PackageList, type PackageName, yarnList } from './yarn';
+import type { PackageName } from './bun';
+import { PackageList, bunList } from './bun';
 
 class CircularDependenciesError extends Error {
   constructor(public currentName: string) {
@@ -149,4 +150,4 @@ export class Workspace {
   }
 }
 
-export { Package, type PackageName, yarnList };
+export { Package, bunList };

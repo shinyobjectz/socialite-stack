@@ -21,8 +21,8 @@ fi
 
 echo "[+] setting up the project"
 
-echo "[*] interacting with yarn..."
-yarn install
+echo "[*] interacting with bun..."
+bun install
 
 echo "[*] temporary set pbxproj to use object version 56"
 XCPROJ_PATH=$SCRIPT_DIR_PATH/App/App.xcodeproj/project.pbxproj
@@ -30,8 +30,8 @@ CURRENT_VERSION=$(grep "objectVersion = " "$XCPROJ_PATH" | awk -F ' = ' '{print 
 echo "[*] current object version: $CURRENT_VERSION"
 sed -i '' "s/objectVersion = $CURRENT_VERSION/objectVersion = 56/" "$XCPROJ_PATH"
 
-yarn affine @affine/ios build
-yarn affine @affine/ios sync
+bun affine @affine/ios build
+bun affine @affine/ios sync
 
 echo "[*] interacting with rust..."
 rustup target add aarch64-apple-ios
@@ -53,8 +53,8 @@ cp -r $CUSTOM_SCALARS_DIR/* $TEMP_DIR/
 
 echo "[*] codegen..."
 rm -rf $CUSTOM_SCALARS_DIR/*
-yarn affine @affine/ios codegen "1.23.0"
+bun affine @affine/ios codegen "1.23.0"
 cp -r $TEMP_DIR/* $CUSTOM_SCALARS_DIR/
 
 echo "[+] setup complete"
-yarn affine @affine/ios xcode
+bun affine @affine/ios xcode

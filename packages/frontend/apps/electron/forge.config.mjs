@@ -249,7 +249,7 @@ export default {
         process.env.TARGET = 'aarch64-apple-darwin';
       }
 
-      cp.spawnSync('yarn', ['generate-assets'], {
+      cp.spawnSync('bun', ['generate-assets'], {
         stdio: 'inherit',
         cwd: __dirname,
       });

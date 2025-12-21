@@ -1,4 +1,4 @@
-import { PackageList, type PackageName } from './yarn';
+import { PackageList, type PackageName } from './bun';
 
 export const PackageToDistribution = new Map<
   PackageName,

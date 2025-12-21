@@ -18,11 +18,11 @@
     "e2e": "cross-env TEST_MODE=e2e ava --serial",
     "e2e:coverage": "cross-env TEST_MODE=e2e c8 ava --serial",
     "data-migration": "cross-env NODE_ENV=development SERVER_FLAVOR=script r ./src/index.ts",
-    "init": "yarn prisma migrate dev && yarn data-migration run",
+    "init": "bun prisma migrate dev && bun data-migration run",
     "seed": "r ./src/seed/index.ts",
     "genconfig": "r ./scripts/genconfig.ts",
     "cli": "cross-env SERVER_FLAVOR=script node ./dist/main.js",
-    "predeploy": "yarn prisma migrate deploy && yarn cli run",
+    "predeploy": "bun prisma migrate deploy && bun cli run",
     "postinstall": "prisma generate"
   },
   "dependencies": {
@@ -129,7 +129,7 @@
     "@affine/graphql": "workspace:*",
     "@faker-js/faker": "^10.1.0",
     "@nestjs/swagger": "^11.2.0",
-    "@nestjs/testing": "patch:@nestjs/testing@npm%3A10.4.15#~/.yarn/patches/@nestjs-testing-npm-10.4.15-d591a1705a.patch",
+    "@nestjs/testing": "^10.4.15",
     "@types/cookie-parser": "^1.4.8",
     "@types/express": "^5.0.1",
     "@types/express-serve-static-core": "^5.0.6",

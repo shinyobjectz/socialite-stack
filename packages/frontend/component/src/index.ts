@@ -1,3 +1,4 @@
+export * from './components/brand';
 export * from './hooks';
 export * from './lit-react';
 export * from './styles';

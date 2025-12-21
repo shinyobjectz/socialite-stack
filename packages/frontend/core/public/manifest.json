@@ -1,7 +1,7 @@
 {
-  "name": "AFFiNE: There can be more than Notion and Miro.",
-  "short_name": "AFFiNE",
-  "description": "AFFiNE is a workspace with fully merged docs, whiteboards and databases. Get more things done, your creativity isn’t monotone.",
+  "name": "Socialite: The AI-Powered Social Workspace",
+  "short_name": "Socialite",
+  "description": "Socialite is an AI-driven social media platform and workspace. Get more things done, your creativity isn’t monotone.",
   "start_url": "/?source=pwa",
   "background_color": "#ffffff",
   "display": "standalone",

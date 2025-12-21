@@ -2,8 +2,8 @@
 // DO NOT MODIFY THIS FILE MANUALLY
 export const PackageList = [
   {
-    location: 'blocksuite/affine/all',
     name: '@blocksuite/affine',
+    location: 'blocksuite/affine/all',
     workspaceDependencies: [
       'blocksuite/affine/blocks/attachment',
       'blocksuite/affine/blocks/bookmark',
@@ -77,8 +77,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/attachment',
     name: '@blocksuite/affine-block-attachment',
+    location: 'blocksuite/affine/blocks/attachment',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -92,8 +92,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/bookmark',
     name: '@blocksuite/affine-block-bookmark',
+    location: 'blocksuite/affine/blocks/bookmark',
     workspaceDependencies: [
       'blocksuite/affine/blocks/embed',
       'blocksuite/affine/blocks/embed-doc',
@@ -109,8 +109,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/callout',
     name: '@blocksuite/affine-block-callout',
+    location: 'blocksuite/affine/blocks/callout',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -125,8 +125,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/code',
     name: '@blocksuite/affine-block-code',
+    location: 'blocksuite/affine/blocks/code',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -145,8 +145,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/data-view',
     name: '@blocksuite/affine-block-data-view',
+    location: 'blocksuite/affine/blocks/data-view',
     workspaceDependencies: [
       'blocksuite/affine/blocks/database',
       'blocksuite/affine/components',
@@ -161,8 +161,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/database',
     name: '@blocksuite/affine-block-database',
+    location: 'blocksuite/affine/blocks/database',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -180,8 +180,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/divider',
     name: '@blocksuite/affine-block-divider',
+    location: 'blocksuite/affine/blocks/divider',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -194,8 +194,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/edgeless-text',
     name: '@blocksuite/affine-block-edgeless-text',
+    location: 'blocksuite/affine/blocks/edgeless-text',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -212,8 +212,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/embed',
     name: '@blocksuite/affine-block-embed',
+    location: 'blocksuite/affine/blocks/embed',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -230,8 +230,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/embed-doc',
     name: '@blocksuite/affine-block-embed-doc',
+    location: 'blocksuite/affine/blocks/embed-doc',
     workspaceDependencies: [
       'blocksuite/affine/blocks/embed',
       'blocksuite/affine/blocks/surface',
@@ -248,8 +248,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/frame',
     name: '@blocksuite/affine-block-frame',
+    location: 'blocksuite/affine/blocks/frame',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -265,8 +265,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/image',
     name: '@blocksuite/affine-block-image',
+    location: 'blocksuite/affine/blocks/image',
     workspaceDependencies: [
       'blocksuite/affine/blocks/note',
       'blocksuite/affine/blocks/surface',
@@ -282,8 +282,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/latex',
     name: '@blocksuite/affine-block-latex',
+    location: 'blocksuite/affine/blocks/latex',
     workspaceDependencies: [
       'blocksuite/affine/blocks/note',
       'blocksuite/affine/components',
@@ -299,8 +299,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/list',
     name: '@blocksuite/affine-block-list',
+    location: 'blocksuite/affine/blocks/list',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -315,8 +315,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/note',
     name: '@blocksuite/affine-block-note',
+    location: 'blocksuite/affine/blocks/note',
     workspaceDependencies: [
       'blocksuite/affine/blocks/embed',
       'blocksuite/affine/blocks/surface',
@@ -335,8 +335,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/paragraph',
     name: '@blocksuite/affine-block-paragraph',
+    location: 'blocksuite/affine/blocks/paragraph',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -351,8 +351,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/root',
     name: '@blocksuite/affine-block-root',
+    location: 'blocksuite/affine/blocks/root',
     workspaceDependencies: [
       'blocksuite/affine/blocks/attachment',
       'blocksuite/affine/blocks/bookmark',
@@ -387,8 +387,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/surface',
     name: '@blocksuite/affine-block-surface',
+    location: 'blocksuite/affine/blocks/surface',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -401,8 +401,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/surface-ref',
     name: '@blocksuite/affine-block-surface-ref',
+    location: 'blocksuite/affine/blocks/surface-ref',
     workspaceDependencies: [
       'blocksuite/affine/blocks/frame',
       'blocksuite/affine/blocks/surface',
@@ -418,8 +418,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/blocks/table',
     name: '@blocksuite/affine-block-table',
+    location: 'blocksuite/affine/blocks/table',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -435,8 +435,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/components',
     name: '@blocksuite/affine-components',
+    location: 'blocksuite/affine/components',
     workspaceDependencies: [
       'blocksuite/affine/model',
       'blocksuite/affine/shared',
@@ -447,8 +447,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/data-view',
     name: '@blocksuite/data-view',
+    location: 'blocksuite/affine/data-view',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/shared',
@@ -458,16 +458,16 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/ext-loader',
     name: '@blocksuite/affine-ext-loader',
+    location: 'blocksuite/affine/ext-loader',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/framework/store',
     ],
   },
   {
-    location: 'blocksuite/affine/foundation',
     name: '@blocksuite/affine-foundation',
+    location: 'blocksuite/affine/foundation',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -480,8 +480,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/fragments/adapter-panel',
     name: '@blocksuite/affine-fragment-adapter-panel',
+    location: 'blocksuite/affine/fragments/adapter-panel',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -493,8 +493,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/fragments/doc-title',
     name: '@blocksuite/affine-fragment-doc-title',
+    location: 'blocksuite/affine/fragments/doc-title',
     workspaceDependencies: [
       'blocksuite/affine/blocks/frame',
       'blocksuite/affine/blocks/surface',
@@ -509,8 +509,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/fragments/frame-panel',
     name: '@blocksuite/affine-fragment-frame-panel',
+    location: 'blocksuite/affine/fragments/frame-panel',
     workspaceDependencies: [
       'blocksuite/affine/blocks/frame',
       'blocksuite/affine/blocks/surface',
@@ -525,8 +525,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/fragments/outline',
     name: '@blocksuite/affine-fragment-outline',
+    location: 'blocksuite/affine/fragments/outline',
     workspaceDependencies: [
       'blocksuite/affine/blocks/note',
       'blocksuite/affine/components',
@@ -541,8 +541,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/gfx/brush',
     name: '@blocksuite/affine-gfx-brush',
+    location: 'blocksuite/affine/gfx/brush',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -557,8 +557,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/gfx/connector',
     name: '@blocksuite/affine-gfx-connector',
+    location: 'blocksuite/affine/gfx/connector',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -574,8 +574,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/gfx/group',
     name: '@blocksuite/affine-gfx-group',
+    location: 'blocksuite/affine/gfx/group',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -591,8 +591,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/gfx/link',
     name: '@blocksuite/affine-gfx-link',
+    location: 'blocksuite/affine/gfx/link',
     workspaceDependencies: [
       'blocksuite/affine/blocks/bookmark',
       'blocksuite/affine/blocks/embed',
@@ -610,8 +610,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/gfx/mindmap',
     name: '@blocksuite/affine-gfx-mindmap',
+    location: 'blocksuite/affine/gfx/mindmap',
     workspaceDependencies: [
       'blocksuite/affine/blocks/attachment',
       'blocksuite/affine/blocks/edgeless-text',
@@ -633,8 +633,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/gfx/note',
     name: '@blocksuite/affine-gfx-note',
+    location: 'blocksuite/affine/gfx/note',
     workspaceDependencies: [
       'blocksuite/affine/blocks/attachment',
       'blocksuite/affine/blocks/bookmark',
@@ -652,8 +652,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/gfx/pointer',
     name: '@blocksuite/affine-gfx-pointer',
+    location: 'blocksuite/affine/gfx/pointer',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -668,8 +668,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/gfx/shape',
     name: '@blocksuite/affine-gfx-shape',
+    location: 'blocksuite/affine/gfx/shape',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -685,8 +685,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/gfx/template',
     name: '@blocksuite/affine-gfx-template',
+    location: 'blocksuite/affine/gfx/template',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -702,8 +702,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/gfx/text',
     name: '@blocksuite/affine-gfx-text',
+    location: 'blocksuite/affine/gfx/text',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -718,8 +718,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/gfx/turbo-renderer',
     name: '@blocksuite/affine-gfx-turbo-renderer',
+    location: 'blocksuite/affine/gfx/turbo-renderer',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/framework/std',
@@ -727,8 +727,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/inlines/comment',
     name: '@blocksuite/affine-inline-comment',
+    location: 'blocksuite/affine/inlines/comment',
     workspaceDependencies: [
       'blocksuite/affine/ext-loader',
       'blocksuite/affine/model',
@@ -740,8 +740,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/inlines/footnote',
     name: '@blocksuite/affine-inline-footnote',
+    location: 'blocksuite/affine/inlines/footnote',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -754,8 +754,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/inlines/latex',
     name: '@blocksuite/affine-inline-latex',
+    location: 'blocksuite/affine/inlines/latex',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -769,8 +769,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/inlines/link',
     name: '@blocksuite/affine-inline-link',
+    location: 'blocksuite/affine/inlines/link',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -783,8 +783,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/inlines/mention',
     name: '@blocksuite/affine-inline-mention',
+    location: 'blocksuite/affine/inlines/mention',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -796,8 +796,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/inlines/preset',
     name: '@blocksuite/affine-inline-preset',
+    location: 'blocksuite/affine/inlines/preset',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -816,8 +816,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/inlines/reference',
     name: '@blocksuite/affine-inline-reference',
+    location: 'blocksuite/affine/inlines/reference',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -829,8 +829,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/model',
     name: '@blocksuite/affine-model',
+    location: 'blocksuite/affine/model',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/framework/std',
@@ -838,8 +838,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/rich-text',
     name: '@blocksuite/affine-rich-text',
+    location: 'blocksuite/affine/rich-text',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/model',
@@ -850,8 +850,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/shared',
     name: '@blocksuite/affine-shared',
+    location: 'blocksuite/affine/shared',
     workspaceDependencies: [
       'blocksuite/affine/model',
       'blocksuite/framework/global',
@@ -860,8 +860,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/drag-handle',
     name: '@blocksuite/affine-widget-drag-handle',
+    location: 'blocksuite/affine/widgets/drag-handle',
     workspaceDependencies: [
       'blocksuite/affine/blocks/callout',
       'blocksuite/affine/blocks/embed',
@@ -879,8 +879,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/edgeless-auto-connect',
     name: '@blocksuite/affine-widget-edgeless-auto-connect',
+    location: 'blocksuite/affine/widgets/edgeless-auto-connect',
     workspaceDependencies: [
       'blocksuite/affine/blocks/note',
       'blocksuite/affine/blocks/surface',
@@ -893,8 +893,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/edgeless-dragging-area',
     name: '@blocksuite/affine-widget-edgeless-dragging-area',
+    location: 'blocksuite/affine/widgets/edgeless-dragging-area',
     workspaceDependencies: [
       'blocksuite/affine/blocks/note',
       'blocksuite/affine/blocks/surface',
@@ -907,8 +907,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/edgeless-selected-rect',
     name: '@blocksuite/affine-widget-edgeless-selected-rect',
+    location: 'blocksuite/affine/widgets/edgeless-selected-rect',
     workspaceDependencies: [
       'blocksuite/affine/blocks/frame',
       'blocksuite/affine/blocks/note',
@@ -925,8 +925,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/edgeless-toolbar',
     name: '@blocksuite/affine-widget-edgeless-toolbar',
+    location: 'blocksuite/affine/widgets/edgeless-toolbar',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -939,8 +939,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/edgeless-zoom-toolbar',
     name: '@blocksuite/affine-widget-edgeless-zoom-toolbar',
+    location: 'blocksuite/affine/widgets/edgeless-zoom-toolbar',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -952,8 +952,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/frame-title',
     name: '@blocksuite/affine-widget-frame-title',
+    location: 'blocksuite/affine/widgets/frame-title',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -966,8 +966,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/keyboard-toolbar',
     name: '@blocksuite/affine-widget-keyboard-toolbar',
+    location: 'blocksuite/affine/widgets/keyboard-toolbar',
     workspaceDependencies: [
       'blocksuite/affine/blocks/attachment',
       'blocksuite/affine/blocks/database',
@@ -997,8 +997,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/linked-doc',
     name: '@blocksuite/affine-widget-linked-doc',
+    location: 'blocksuite/affine/widgets/linked-doc',
     workspaceDependencies: [
       'blocksuite/affine/blocks/image',
       'blocksuite/affine/components',
@@ -1013,8 +1013,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/note-slicer',
     name: '@blocksuite/affine-widget-note-slicer',
+    location: 'blocksuite/affine/widgets/note-slicer',
     workspaceDependencies: [
       'blocksuite/affine/blocks/note',
       'blocksuite/affine/blocks/surface',
@@ -1028,8 +1028,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/page-dragging-area',
     name: '@blocksuite/affine-widget-page-dragging-area',
+    location: 'blocksuite/affine/widgets/page-dragging-area',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -1041,8 +1041,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/remote-selection',
     name: '@blocksuite/affine-widget-remote-selection',
+    location: 'blocksuite/affine/widgets/remote-selection',
     workspaceDependencies: [
       'blocksuite/affine/blocks/surface',
       'blocksuite/affine/components',
@@ -1054,8 +1054,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/scroll-anchoring',
     name: '@blocksuite/affine-widget-scroll-anchoring',
+    location: 'blocksuite/affine/widgets/scroll-anchoring',
     workspaceDependencies: [
       'blocksuite/affine/ext-loader',
       'blocksuite/affine/model',
@@ -1065,8 +1065,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/slash-menu',
     name: '@blocksuite/affine-widget-slash-menu',
+    location: 'blocksuite/affine/widgets/slash-menu',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -1078,8 +1078,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/toolbar',
     name: '@blocksuite/affine-widget-toolbar',
+    location: 'blocksuite/affine/widgets/toolbar',
     workspaceDependencies: [
       'blocksuite/affine/blocks/database',
       'blocksuite/affine/blocks/surface',
@@ -1093,8 +1093,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/affine/widgets/viewport-overlay',
     name: '@blocksuite/affine-widget-viewport-overlay',
+    location: 'blocksuite/affine/widgets/viewport-overlay',
     workspaceDependencies: [
       'blocksuite/affine/components',
       'blocksuite/affine/ext-loader',
@@ -1105,44 +1105,44 @@ export const PackageList = [
     ],
   },
   {
-    location: 'blocksuite/docs',
     name: '@blocksuite/bs-docs',
+    location: 'blocksuite/docs',
     workspaceDependencies: ['blocksuite/affine/all'],
   },
   {
-    location: 'blocksuite/framework/global',
     name: '@blocksuite/global',
+    location: 'blocksuite/framework/global',
     workspaceDependencies: [],
   },
   {
-    location: 'blocksuite/framework/std',
     name: '@blocksuite/std',
+    location: 'blocksuite/framework/std',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/framework/store',
     ],
   },
   {
-    location: 'blocksuite/framework/store',
     name: '@blocksuite/store',
+    location: 'blocksuite/framework/store',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/framework/sync',
     ],
   },
   {
-    location: 'blocksuite/framework/sync',
     name: '@blocksuite/sync',
+    location: 'blocksuite/framework/sync',
     workspaceDependencies: ['blocksuite/framework/global'],
   },
   {
-    location: 'blocksuite/integration-test',
     name: '@blocksuite/integration-test',
+    location: 'blocksuite/integration-test',
     workspaceDependencies: ['blocksuite/affine/all'],
   },
   {
-    location: 'blocksuite/playground',
     name: '@blocksuite/playground',
+    location: 'blocksuite/playground',
     workspaceDependencies: [
       'blocksuite/affine/all',
       'blocksuite/affine/components',
@@ -1153,18 +1153,18 @@ export const PackageList = [
     ],
   },
   {
-    location: 'docs/reference',
     name: '@affine/docs',
+    location: 'docs/reference',
     workspaceDependencies: [],
   },
   {
-    location: 'packages/backend/native',
     name: '@affine/server-native',
+    location: 'packages/backend/native',
     workspaceDependencies: [],
   },
   {
-    location: 'packages/backend/server',
     name: '@affine/server',
+    location: 'packages/backend/server',
     workspaceDependencies: [
       'packages/backend/native',
       'tools/cli',
@@ -1173,23 +1173,23 @@ export const PackageList = [
     ],
   },
   {
-    location: 'packages/common/debug',
     name: '@affine/debug',
+    location: 'packages/common/debug',
     workspaceDependencies: [],
   },
   {
-    location: 'packages/common/env',
     name: '@affine/env',
+    location: 'packages/common/env',
     workspaceDependencies: [],
   },
   {
-    location: 'packages/common/error',
     name: '@affine/error',
+    location: 'packages/common/error',
     workspaceDependencies: [],
   },
   {
-    location: 'packages/common/graphql',
     name: '@affine/graphql',
+    location: 'packages/common/graphql',
     workspaceDependencies: [
       'packages/common/debug',
       'packages/common/env',
@@ -1197,18 +1197,19 @@ export const PackageList = [
     ],
   },
   {
-    location: 'packages/common/infra',
     name: '@toeverything/infra',
+    location: 'packages/common/infra',
     workspaceDependencies: [
       'packages/common/debug',
       'packages/common/env',
       'packages/common/error',
       'packages/frontend/templates',
+      'packages/frontend/templates',
     ],
   },
   {
-    location: 'packages/common/nbstore',
     name: '@affine/nbstore',
+    location: 'packages/common/nbstore',
     workspaceDependencies: [
       'packages/common/reader',
       'packages/common/infra',
@@ -1218,18 +1219,18 @@ export const PackageList = [
     ],
   },
   {
-    location: 'packages/common/reader',
     name: '@affine/reader',
+    location: 'packages/common/reader',
     workspaceDependencies: ['blocksuite/affine/all'],
   },
   {
-    location: 'packages/common/y-octo/node',
     name: '@y-octo/node',
+    location: 'packages/common/y-octo/node',
     workspaceDependencies: [],
   },
   {
-    location: 'packages/frontend/admin',
     name: '@affine/admin',
+    location: 'packages/frontend/admin',
     workspaceDependencies: [
       'packages/frontend/component',
       'packages/frontend/core',
@@ -1240,8 +1241,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'packages/frontend/apps/android',
     name: '@affine/android',
+    location: 'packages/frontend/apps/android',
     workspaceDependencies: [
       'packages/frontend/component',
       'packages/frontend/core',
@@ -1253,8 +1254,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'packages/frontend/apps/electron',
     name: '@affine/electron',
+    location: 'packages/frontend/apps/electron',
     workspaceDependencies: [
       'tools/utils',
       'packages/frontend/i18n',
@@ -1264,8 +1265,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'packages/frontend/apps/electron-renderer',
     name: '@affine/electron-renderer',
+    location: 'packages/frontend/apps/electron-renderer',
     workspaceDependencies: [
       'packages/frontend/component',
       'packages/frontend/core',
@@ -1280,8 +1281,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'packages/frontend/apps/ios',
     name: '@affine/ios',
+    location: 'packages/frontend/apps/ios',
     workspaceDependencies: [
       'packages/frontend/component',
       'packages/frontend/core',
@@ -1297,8 +1298,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'packages/frontend/apps/mobile',
     name: '@affine/mobile',
+    location: 'packages/frontend/apps/mobile',
     workspaceDependencies: [
       'packages/frontend/component',
       'packages/frontend/core',
@@ -1310,8 +1311,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'packages/frontend/apps/web',
     name: '@affine/web',
+    location: 'packages/frontend/apps/web',
     workspaceDependencies: [
       'packages/frontend/component',
       'packages/frontend/core',
@@ -1323,8 +1324,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'packages/frontend/component',
     name: '@affine/component',
+    location: 'packages/frontend/component',
     workspaceDependencies: [
       'packages/common/debug',
       'packages/frontend/electron-api',
@@ -1336,8 +1337,8 @@ export const PackageList = [
     ],
   },
   {
-    location: 'packages/frontend/core',
     name: '@affine/core',
+    location: 'packages/frontend/core',
     workspaceDependencies: [
       'packages/frontend/component',
       'packages/common/debug',
@@ -1361,13 +1362,13 @@ export const PackageList = [
     ],
   },
   {
-    location: 'packages/frontend/electron-api',
     name: '@affine/electron-api',
+    location: 'packages/frontend/electron-api',
     workspaceDependencies: ['packages/frontend/apps/electron'],
   },
   {
-    location: 'packages/frontend/i18n',
     name: '@affine/i18n',
+    location: 'packages/frontend/i18n',
     workspaceDependencies: [
       'packages/common/debug',
       'tools/cli',
@@ -1375,71 +1376,71 @@ export const PackageList = [
     ],
   },
   {
-    location: 'packages/frontend/media-capture-playground',
     name: '@affine/media-capture-playground',
+    location: 'packages/frontend/media-capture-playground',
     workspaceDependencies: ['packages/frontend/native'],
   },
   {
-    location: 'packages/frontend/native',
     name: '@affine/native',
+    location: 'packages/frontend/native',
     workspaceDependencies: [],
   },
   {
-    location: 'packages/frontend/routes',
     name: '@affine/routes',
+    location: 'packages/frontend/routes',
     workspaceDependencies: ['tools/cli', 'tools/utils'],
   },
   {
-    location: 'packages/frontend/templates',
     name: '@affine/templates',
+    location: 'packages/frontend/templates',
     workspaceDependencies: [],
   },
   {
-    location: 'packages/frontend/track',
     name: '@affine/track',
+    location: 'packages/frontend/track',
     workspaceDependencies: ['packages/common/debug'],
   },
   {
-    location: 'tests/affine-cloud',
     name: '@affine-test/affine-cloud',
+    location: 'tests/affine-cloud',
     workspaceDependencies: ['tests/kit'],
   },
   {
-    location: 'tests/affine-cloud-copilot',
     name: '@affine-test/affine-cloud-copilot',
+    location: 'tests/affine-cloud-copilot',
     workspaceDependencies: ['tests/kit'],
   },
   {
-    location: 'tests/affine-desktop',
     name: '@affine-test/affine-desktop',
+    location: 'tests/affine-desktop',
     workspaceDependencies: ['tests/kit', 'packages/frontend/electron-api'],
   },
   {
-    location: 'tests/affine-desktop-cloud',
     name: '@affine-test/affine-desktop-cloud',
+    location: 'tests/affine-desktop-cloud',
     workspaceDependencies: ['tests/kit'],
   },
   {
-    location: 'tests/affine-local',
     name: '@affine-test/affine-local',
+    location: 'tests/affine-local',
     workspaceDependencies: ['tests/kit', 'tools/cli', 'tools/utils'],
   },
   {
-    location: 'tests/affine-mobile',
     name: '@affine-test/affine-mobile',
+    location: 'tests/affine-mobile',
     workspaceDependencies: ['tests/kit'],
   },
   {
-    location: 'tests/blocksuite',
     name: '@affine-test/blocksuite',
+    location: 'tests/blocksuite',
     workspaceDependencies: [
       'blocksuite/affine/all',
       'blocksuite/integration-test',
     ],
   },
   {
-    location: 'tests/kit',
     name: '@affine-test/kit',
+    location: 'tests/kit',
     workspaceDependencies: [
       'tools/utils',
       'blocksuite/affine/all',
@@ -1447,43 +1448,43 @@ export const PackageList = [
     ],
   },
   {
-    location: 'tools/@types/build-config',
     name: '@types/build-config',
+    location: 'tools/@types/build-config',
     workspaceDependencies: [],
   },
   {
-    location: 'tools/@types/env',
     name: '@types/affine__env',
+    location: 'tools/@types/env',
     workspaceDependencies: ['packages/common/env', 'blocksuite/affine/all'],
   },
   {
-    location: 'tools/changelog',
     name: '@affine/changelog',
+    location: 'tools/changelog',
     workspaceDependencies: [],
   },
   {
-    location: 'tools/cli',
     name: '@affine-tools/cli',
+    location: 'tools/cli',
     workspaceDependencies: ['tools/utils'],
   },
   {
-    location: 'tools/commitlint',
     name: '@affine/commitlint-config',
+    location: 'tools/commitlint',
     workspaceDependencies: [],
   },
   {
-    location: 'tools/copilot-result',
     name: '@affine/copilot-result',
+    location: 'tools/copilot-result',
     workspaceDependencies: [],
   },
   {
-    location: 'tools/playstore-auto-bump',
     name: '@affine/playstore-auto-bump',
+    location: 'tools/playstore-auto-bump',
     workspaceDependencies: ['tools/cli', 'tools/utils'],
   },
   {
-    location: 'tools/utils',
     name: '@affine-tools/utils',
+    location: 'tools/utils',
     workspaceDependencies: [],
   },
 ];

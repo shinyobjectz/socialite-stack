@@ -39,7 +39,7 @@
     "build:debug": "napi build --platform --no-const-enum",
     "universal": "napi universal",
     "test": "NODE_NO_WARNINGS=1 node ./scripts/run-test.mts all",
-    "test:watch": "yarn exec ts-node-esm ./scripts/run-test.ts all --watch",
+    "test:watch": "bun exec ts-node-esm ./scripts/run-test.ts all --watch",
     "test:coverage": "NODE_OPTIONS=\"--loader ts-node/esm\" c8 node ./scripts/run-test.mts all",
     "version": "napi version"
   },

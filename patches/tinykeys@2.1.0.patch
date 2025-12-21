@@ -1,0 +1,30 @@
+diff --git a/dist/tinykeys.module.js b/dist/tinykeys.module.mjs
+similarity index 100%
+rename from dist/tinykeys.module.js
+rename to dist/tinykeys.module.mjs
+diff --git a/dist/tinykeys.module.js.map b/dist/tinykeys.module.mjs.map
+similarity index 100%
+rename from dist/tinykeys.module.js.map
+rename to dist/tinykeys.module.mjs.map
+diff --git a/package.json b/package.json
+index d6a93bb7cce03b4836cf96deba308de0417079a3..ce382afc534607d67b04d877cdf6990769c59d1b 100644
+--- a/package.json
++++ b/package.json
+@@ -7,7 +7,7 @@
+   "repository": "jamiebuilds/tinykeys",
+   "source": "src/tinykeys.ts",
+   "main": "dist/tinykeys.js",
+-  "module": "dist/tinykeys.module.js",
++  "module": "dist/tinykeys.module.mjs",
+   "unpkg": "dist/tinykeys.umd.js",
+   "types": "dist/tinykeys.d.ts",
+   "files": [
+@@ -15,7 +15,7 @@
+   ],
+   "exports": {
+     ".": {
+-      "import": "./dist/tinykeys.module.js",
++      "import": "./dist/tinykeys.module.mjs",
+       "require": "./dist/tinykeys.js"
+     }
+   },

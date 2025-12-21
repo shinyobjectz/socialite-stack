@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "yarn playwright test"
+    "test": "bun playwright test"
   },
   "dependencies": {
     "@blocksuite/affine": "workspace:*",

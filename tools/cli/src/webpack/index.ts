@@ -1,4 +1,5 @@
 import { createRequire } from 'node:module';
+import { existsSync } from 'node:fs';
 import path from 'node:path';
 
 import { getBuildConfig } from '@affine-tools/utils/build-config';
@@ -22,6 +23,26 @@ import { WebpackS3Plugin } from './s3-plugin.js';
 
 const require = createRequire(import.meta.url);
 const cssnano = require('cssnano');
+
+function resolvePackageRoot(pkgName: string): string {
+  // Prefer package.json when it's exported (works for most packages)
+  try {
+    return path.dirname(require.resolve(`${pkgName}/package.json`));
+  } catch {
+    // Fall back to resolving the entry point and walking up to the nearest package.json
+    const entry = require.resolve(pkgName);
+    let dir = path.dirname(entry);
+
+    for (;;) {
+      const pkgJson = path.join(dir, 'package.json');
+      if (existsSync(pkgJson)) return dir;
+
+      const parent = path.dirname(dir);
+      if (parent === dir) return path.dirname(entry);
+      dir = parent;
+    }
+  }
+}
 
 const IN_CI = !!process.env.CI;
 
@@ -99,13 +120,15 @@ export function createHTMLTargetConfig(
       },
       extensions: ['.js', '.ts', '.tsx'],
       alias: {
-        yjs: ProjectRoot.join('node_modules', 'yjs').value,
-        lit: ProjectRoot.join('node_modules', 'lit').value,
-        '@preact/signals-core': ProjectRoot.join(
-          'node_modules',
-          '@preact',
-          'signals-core'
-        ).value,
+        yjs: resolvePackageRoot('yjs'),
+
+        // Deduplicate Lit-related packages to avoid "Multiple versions of Lit loaded"
+        lit: resolvePackageRoot('lit'),
+        'lit-html': resolvePackageRoot('lit-html'),
+        'lit-element': resolvePackageRoot('lit-element'),
+        '@lit/reactive-element': resolvePackageRoot('@lit/reactive-element'),
+
+        '@preact/signals-core': resolvePackageRoot('@preact/signals-core'),
       },
     },
     //#endregion
@@ -394,7 +417,7 @@ export function createWorkerTargetConfig(
       symlinks: true,
       extensionAlias: { '.js': ['.js', '.ts'], '.mjs': ['.mjs', '.mts'] },
       extensions: ['.js', '.ts'],
-      alias: { yjs: ProjectRoot.join('node_modules', 'yjs').value },
+      alias: { yjs: resolvePackageRoot('yjs') },
     },
 
     module: {
@@ -536,7 +559,7 @@ export function createNodeTargetConfig(
       symlinks: true,
       extensionAlias: { '.js': ['.js', '.ts'], '.mjs': ['.mjs', '.mts'] },
       extensions: ['.js', '.ts', '.tsx', '.node'],
-      alias: { yjs: ProjectRoot.join('node_modules', 'yjs').value },
+      alias: { yjs: resolvePackageRoot('yjs') },
     },
     module: {
       parser: {

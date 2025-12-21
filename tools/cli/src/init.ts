@@ -4,7 +4,7 @@ import type { Path } from '@affine-tools/utils/path';
 import {
   type Package,
   Workspace,
-  yarnList,
+  bunList,
 } from '@affine-tools/utils/workspace';
 import { applyEdits, modify } from 'jsonc-parser';
 import { type BuiltInParserName, format } from 'prettier';
@@ -21,7 +21,7 @@ export class InitCommand extends Command {
   }
 
   async generateWorkspaceFiles() {
-    this.workspace = new Workspace(yarnList());
+    this.workspace = new Workspace(bunList());
     const filesToGenerate: [
       Path,
       (prev: string) => string,
@@ -84,7 +84,7 @@ export class InitCommand extends Command {
   };
 
   genWorkspaceInfo = () => {
-    const list = yarnList();
+    const list = bunList();
 
     const names = list.map(p => p.name);
 

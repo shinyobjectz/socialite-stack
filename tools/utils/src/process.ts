@@ -15,10 +15,10 @@ export function spawn(
   options: SpawnOptions = {}
 ) {
   cmd = typeof cmd === 'string' ? cmd.split(' ') : cmd;
-  const isYarnSpawn = cmd[0] === 'yarn';
+  const isBunSpawn = cmd[0] === 'bun';
 
   const spawnOptions: SpawnOptions = {
-    stdio: isYarnSpawn
+    stdio: isBunSpawn
       ? ['inherit', 'inherit', 'inherit']
       : ['inherit', 'pipe', 'pipe'],
     shell: true,

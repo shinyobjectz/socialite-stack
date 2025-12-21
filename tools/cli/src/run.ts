@@ -160,7 +160,7 @@ export class RunCommand extends PackageCommand {
     const { args: extractedArgs, envs } = this.extractEnvs(args);
     args = extractedArgs;
 
-    const bin = args[0] === 'yarn' ? args[1] : args[0];
+    const bin = args[0] === 'bun' ? args[1] : args[0];
 
     const loader = currentDir.join('../register.js').toFileUrl().toString();
 
@@ -178,9 +178,9 @@ export class RunCommand extends PackageCommand {
       NODE_OPTIONS.push(`--import=${loader}`);
     }
 
-    if (args[0] !== 'yarn') {
-      // add 'yarn' to the command so we can bypass bin execution to it
-      args.unshift('yarn');
+    if (args[0] !== 'bun') {
+      // add 'bun' to the command so we can bypass bin execution to it
+      args.unshift('bun');
     }
 
     await execAsync(pkg.name, args, {

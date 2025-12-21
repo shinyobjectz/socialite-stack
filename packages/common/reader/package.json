@@ -10,7 +10,7 @@
     "./dist": "./dist/index.js"
   },
   "scripts": {
-    "build": "yarn bundle",
+    "build": "bun bundle",
     "bundle": "node esbuild.config.js"
   },
   "dependencies": {

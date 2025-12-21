@@ -5,7 +5,7 @@
   "version": "0.25.7",
   "scripts": {
     "build": "node ./build-edgeless.mjs && node ./build-stickers.mjs",
-    "postinstall": "yarn build"
+    "postinstall": "bun run build"
   },
   "type": "module",
   "exports": {

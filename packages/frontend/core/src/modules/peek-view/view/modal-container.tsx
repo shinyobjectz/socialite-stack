@@ -1,6 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { useLiveData, useService } from '@toeverything/infra';
-import { eases, waapi, type WAAPIAnimation } from 'animejs';
+import { eases, easings, waapi, type WAAPIAnimation } from 'animejs';
 import clsx from 'clsx';
 import {
   createContext,
@@ -328,7 +328,7 @@ export const PeekViewModalContainer = forwardRef<
             opacity: animateIn ? [0, 1] : [1, 0],
             y: animateIn ? ['-2%', '0%'] : ['0%', '-2%'],
             scale: animateIn ? [0.96, 1] : [1, 0.96],
-            ease: eases.cubicBezier(0.42, 0, 0.58, 1),
+            ease: easings.cubicBezier(0.42, 0, 0.58, 1),
             duration: 230,
             onComplete: () => {
               if (!animateIn) setVtOpen(false);

@@ -40,7 +40,7 @@ function prepare() {
 
 function runPredeployScript() {
   console.log('running predeploy script.');
-  execSync('yarn predeploy', {
+  execSync('bun run predeploy', {
     encoding: 'utf-8',
     env: process.env,
     stdio: 'inherit',
@@ -54,7 +54,7 @@ function fixFailedMigrations() {
   ];
   for (const migration of maybeFailedMigrations) {
     try {
-      execSync(`yarn prisma migrate resolve --rolled-back ${migration}`, {
+      execSync(`bun run prisma migrate resolve --rolled-back ${migration}`, {
         encoding: 'utf-8',
         env: process.env,
         stdio: 'pipe',

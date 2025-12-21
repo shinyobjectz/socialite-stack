@@ -1,4 +1,4 @@
-export interface YarnWorkspaceItem {
+export interface BunWorkspaceItem {
   name: string;
   location: string;
   workspaceDependencies: string[];

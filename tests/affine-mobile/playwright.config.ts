@@ -49,7 +49,7 @@ const config: PlaywrightTestConfig = {
   webServer: [
     // Intentionally not building the web, reminds you to run it by yourself.
     {
-      command: 'yarn run -T affine dev -p @affine/mobile',
+      command: 'bun run affine dev -p @affine/mobile',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,
       env: {

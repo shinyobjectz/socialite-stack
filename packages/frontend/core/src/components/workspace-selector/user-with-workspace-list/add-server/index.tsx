@@ -44,3 +44,5 @@ export const AddServer = () => {
     </>
   );
 };
+
+export const AddServerItem = AddServer;

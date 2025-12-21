@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-for DIR_ITEM in $(yarn workspaces list --json | jq -r '.location'); do
+for DIR_ITEM in $(bun pm workspaces list --json | jq -r '.location'); do
   DIR=$(echo -n "$DIR_ITEM" | tr -d '\r\n')
   if [ -f "$DIR/package.json" ]; then
     echo "Setting version for $DIR"

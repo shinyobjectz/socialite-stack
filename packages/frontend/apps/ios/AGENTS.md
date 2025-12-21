@@ -10,25 +10,25 @@ This is the AFFiNE iOS application built with Capacitor, React, and TypeScript. 
 
 ### Build and Development
 
-- `yarn dev` - Start development server with live reload
-- `yarn build` - Build the web application
-- `yarn sync` - Sync web assets with Capacitor iOS project
-- `yarn sync:dev` - Sync with development server (CAP_SERVER_URL=http://localhost:8080)
-- `yarn xcode` - Open Xcode project
-- `yarn codegen` - Generate GraphQL and Rust bindings
+- `bun dev` - Start development server with live reload
+- `bun build` - Build the web application
+- `bun sync` - Sync web assets with Capacitor iOS project
+- `bun sync:dev` - Sync with development server (CAP_SERVER_URL=http://localhost:8080)
+- `bun xcode` - Open Xcode project
+- `bun codegen` - Generate GraphQL and Rust bindings
 - `xcodebuild -workspace App.xcworkspace -scheme App -destination 'platform=iOS Simulator,name=iPhone 15' build | xcbeautify` - Build iOS project with xcbeautify
 
 ### iOS Build Process
 
-1. `BUILD_TYPE=canary PUBLIC_PATH="/" yarn affine @affine/ios build` - Build web assets
-2. `yarn affine @affine/ios cap sync` - Sync with iOS project
-3. `yarn affine @affine/ios cap open ios` - Open in Xcode
+1. `BUILD_TYPE=canary PUBLIC_PATH="/" bun affine @affine/ios build` - Build web assets
+2. `bun affine @affine/ios cap sync` - Sync with iOS project
+3. `bun affine @affine/ios cap open ios` - Open in Xcode
 
 ### Live Reload Setup
 
-1. Run `yarn dev` and select `ios` for Distribution option
-2. Run `yarn affine @affine/ios sync:dev`
-3. Run `yarn affine @affine/ios cap open ios`
+1. Run `bun dev` and select `ios` for Distribution option
+2. Run `bun affine @affine/ios sync:dev`
+3. Run `bun affine @affine/ios cap open ios`
 
 ## Architecture
 

@@ -8,8 +8,8 @@ import type { SettingTab } from '@affine/core/modules/dialogs/constant';
 import { type WorkspaceMetadata } from '@affine/core/modules/workspace';
 import { useI18n } from '@affine/i18n';
 import { track } from '@affine/track';
-import { Logo1Icon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
+import { SocialiteLockup } from '@affine/component';
 import clsx from 'clsx';
 import {
   type HTMLAttributes,
@@ -91,7 +91,7 @@ export const SignInButton = () => {
       }, [globalDialogService])}
     >
       <div className="avatar not-sign">
-        <Logo1Icon />
+        <SocialiteLockup wordmarkHeight={20} markSize={20} decorative />
       </div>
 
       <div className="content">

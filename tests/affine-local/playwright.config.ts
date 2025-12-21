@@ -43,7 +43,7 @@ const config: PlaywrightTestConfig = {
   reporter: process.env.CI ? 'github' : 'list',
   webServer: [
     {
-      command: 'yarn run -T affine dev -p @affine/web',
+      command: 'bun run affine dev -p @affine/web',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,
       env: {
