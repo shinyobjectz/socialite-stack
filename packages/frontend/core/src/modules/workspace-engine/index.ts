@@ -4,6 +4,7 @@ import { ServersService } from '../cloud/services/servers';
 import { GlobalState } from '../storage';
 import { WorkspaceFlavoursProvider } from '../workspace';
 import { CloudWorkspaceFlavoursProvider } from './impls/cloud';
+import { ConvexWorkspaceFlavoursProvider } from './impls/convex';
 import {
   LOCAL_WORKSPACE_LOCAL_STORAGE_KEY,
   LocalWorkspaceFlavoursProvider,
@@ -17,7 +18,12 @@ export function configureBrowserWorkspaceFlavours(framework: Framework) {
     .impl(WorkspaceFlavoursProvider('CLOUD'), CloudWorkspaceFlavoursProvider, [
       GlobalState,
       ServersService,
-    ]);
+    ])
+    .impl(
+      WorkspaceFlavoursProvider('CONVEX'),
+      ConvexWorkspaceFlavoursProvider,
+      [GlobalState]
+    );
 }
 
 /**

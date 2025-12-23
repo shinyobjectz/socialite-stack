@@ -3,7 +3,7 @@ import { v } from 'convex/values';
 
 export default defineSchema({
   workspaces: defineTable({
-    userId: v.string(),
+    userId: v.string(), // Clerk user ID or similar
     name: v.string(),
     slug: v.string(),
     description: v.optional(v.string()),
@@ -15,21 +15,29 @@ export default defineSchema({
     }),
     createdAt: v.number(),
     updatedAt: v.number(),
+    avatarUrl: v.optional(v.string()),
     deletedAt: v.optional(v.number()),
+    usage: v.object({
+      storage: v.number(),
+      aiTokens: v.number(),
+    }),
   })
     .index('by_userId', ['userId'])
     .index('by_slug', ['slug']),
 
   users: defineTable({
+    tokenIdentifier: v.string(), // From Convex auth (e.g. Clerk subject)
     email: v.string(),
     name: v.optional(v.string()),
     avatarUrl: v.optional(v.string()),
     createdAt: v.number(),
-  }).index('by_email', ['email']),
+    lastLoginAt: v.number(),
+  }).index('by_tokenIdentifier', ['tokenIdentifier'])
+    .index('by_email', ['email']),
 
   apiCredentials: defineTable({
     workspaceId: v.id('workspaces'),
-    provider: v.string(), // e.g., 'openai', 'anthropic', 'openrouter'
+    provider: v.string(),
     encryptedValue: v.string(),
     isActive: v.boolean(),
     lastValidated: v.optional(v.number()),
@@ -50,7 +58,7 @@ export default defineSchema({
     ),
     schema: v.object({
       description: v.string(),
-      parameters: v.any(), // JSON Schema
+      parameters: v.any(),
       returns: v.optional(v.any()),
       examples: v.optional(v.array(v.any())),
     }),
@@ -83,7 +91,7 @@ export default defineSchema({
   sessions: defineTable({
     workspaceId: v.id('workspaces'),
     userId: v.string(),
-    sessionId: v.string(), // UUID for external ref
+    sessionId: v.string(),
     mode: v.union(
       v.literal('research'),
       v.literal('content'),
@@ -194,7 +202,7 @@ export default defineSchema({
         )
       ),
     }),
-    generatedBy: v.string(), // Agent ID
+    generatedBy: v.string(),
     generationPrompt: v.optional(v.string()),
     sourceData: v.optional(v.any()),
     createdAt: v.number(),
@@ -240,9 +248,123 @@ export default defineSchema({
     month: v.number(),
     totalTokensUsed: v.number(),
     totalCostUsd: v.number(),
-    costByTool: v.any(), // Map<toolId, cost>
-    costByModel: v.any(), // Map<model, cost>
+    costByTool: v.any(),
+    costByModel: v.any(),
     isFinalized: v.boolean(),
     createdAt: v.number(),
   }).index('by_workspace_date', ['workspaceId', 'year', 'month']),
+
+  docUpdates: defineTable({
+    workspaceId: v.id('workspaces'),
+    docId: v.string(),
+    update: v.bytes(),
+    createdAt: v.number(),
+  })
+    .index('by_workspace_doc', ['workspaceId', 'docId'])
+    .index('by_doc', ['docId']),
+
+  blobs: defineTable({
+    workspaceId: v.id('workspaces'),
+    blobId: v.string(),
+    storageId: v.id('_storage'),
+    mimeType: v.string(),
+    size: v.number(),
+    createdAt: v.number(),
+  })
+    .index('by_workspace_blob', ['workspaceId', 'blobId'])
+    .index('by_storageId', ['storageId']),
+
+  comments: defineTable({
+    workspaceId: v.id('workspaces'),
+    docId: v.string(),
+    userId: v.string(),
+    content: v.string(),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index('by_workspace_doc', ['workspaceId', 'docId']),
+
+  replies: defineTable({
+    commentId: v.id('comments'),
+    userId: v.string(),
+    content: v.string(),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index('by_commentId', ['commentId']),
+
+  commentAttachments: defineTable({
+    workspaceId: v.id('workspaces'),
+    docId: v.string(),
+    key: v.string(),
+    storageId: v.id('_storage'),
+    name: v.string(),
+    mimeType: v.string(),
+    size: v.number(),
+    createdBy: v.string(),
+    createdAt: v.number(),
+  })
+    .index('by_workspace_doc', ['workspaceId', 'docId'])
+    .index('by_storageId', ['storageId']),
+
+  subscriptions: defineTable({
+    workspaceId: v.id('workspaces'),
+    plan: v.string(),
+    status: v.string(),
+    stripeCustomerId: v.optional(v.string()),
+    stripeSubscriptionId: v.optional(v.string()),
+    currentPeriodEnd: v.optional(v.number()),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  }).index('by_workspaceId', ['workspaceId']),
+
+  permissions: defineTable({
+    workspaceId: v.id('workspaces'),
+    userId: v.string(), // tokenIdentifier
+    role: v.union(v.literal('owner'), v.literal('admin'), v.literal('member')),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index('by_workspace_user', ['workspaceId', 'userId'])
+    .index('by_user', ['userId']),
+
+  docPermissions: defineTable({
+    workspaceId: v.id('workspaces'),
+    docId: v.string(),
+    userId: v.string(),
+    level: v.union(v.literal('read'), v.literal('write'), v.literal('admin')),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index('by_workspace_doc_user', ['workspaceId', 'docId', 'userId']),
+
+  notifications: defineTable({
+    userId: v.string(),
+    workspaceId: v.optional(v.id('workspaces')),
+    type: v.string(),
+    title: v.string(),
+    content: v.string(),
+    isRead: v.boolean(),
+    metadata: v.optional(v.any()),
+    createdAt: v.number(),
+  }).index('by_user_read', ['userId', 'isRead']),
+
+  userAccessTokens: defineTable({
+    userId: v.string(),
+    token: v.string(),
+    name: v.string(),
+    scopes: v.array(v.string()),
+    expiresAt: v.optional(v.number()),
+    createdAt: v.number(),
+    lastUsedAt: v.optional(v.number()),
+  }).index('by_token', ['token']).index('by_user', ['userId']),
+
+  featureFlags: defineTable({
+    workspaceId: v.optional(v.id('workspaces')),
+    userId: v.optional(v.string()),
+    feature: v.string(),
+    isEnabled: v.boolean(),
+    metadata: v.optional(v.any()),
+    updatedAt: v.number(),
+  }).index('by_feature', ['feature']),
 });

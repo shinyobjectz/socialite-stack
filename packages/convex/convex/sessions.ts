@@ -246,3 +246,23 @@ export const listSessions = query({
       .take(args.limit ?? 50);
   },
 });
+
+/**
+ * Internal mutation for cron cleanup.
+ */
+export const cleanupExpiredSessions = mutation({
+  args: {},
+  handler: async (ctx) => {
+    const now = Date.now();
+    const expired = await ctx.db
+      .query('sessions')
+      .withIndex('by_status', (q) => q.eq('status', 'completed'))
+      .filter((q) => q.lt(q.field('expiresAt'), now))
+      .collect();
+
+    for (const session of expired) {
+      await ctx.db.delete(session._id);
+    }
+    return expired.length;
+  },
+});

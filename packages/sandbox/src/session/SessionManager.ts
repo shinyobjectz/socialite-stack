@@ -16,8 +16,6 @@ export interface SessionManagerConfig {
   userId: string;
   cloudConvexUrl: string;
   localConvexUrl: string;
-  backendUrl: string;
-  authToken: string;
   agentConfig: {
     model: string;
     instructions: string;
@@ -104,10 +102,10 @@ export class SessionManager {
       model: this.config.agentConfig.model,
       instructions: this.config.agentConfig.instructions,
       sessionId: this.config.sessionId,
+      workspaceId: this.config.workspaceId,
+      cloudConvexUrl: this.config.cloudConvexUrl,
       localConvexUrl: this.config.localConvexUrl,
       toolBus: this.toolBus,
-      backendUrl: this.config.backendUrl,
-      authToken: this.config.authToken,
     });
 
     // Initialize specialized sub-agents
@@ -119,8 +117,8 @@ export class SessionManager {
             model: subConfig.model,
             instructions: subConfig.instructions,
           },
-          this.config.backendUrl,
-          this.config.authToken
+          this.config.workspaceId,
+          this.config.cloudConvexUrl
         );
         this.orchestrator.registerSubAgent(agent);
       }

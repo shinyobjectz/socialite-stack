@@ -1,15 +1,23 @@
 import { mutation, query } from './_generated/server';
 import { v } from 'convex/values';
+import { getAuthUser } from './auth';
+
+/**
+ * Gated Workspace Management
+ */
 
 export const initializeWorkspace = mutation({
   args: {
-    userId: v.string(),
     name: v.string(),
     slug: v.string(),
   },
   async handler(ctx, args) {
+    // 1. Gated: Must be authenticated
+    const { identity } = await getAuthUser(ctx);
+
+    // 2. Create Workspace
     const workspaceId = await ctx.db.insert('workspaces', {
-      userId: args.userId,
+      userId: identity.tokenIdentifier, // Owner is the authenticated user
       name: args.name,
       slug: args.slug,
       settings: {
@@ -18,11 +26,24 @@ export const initializeWorkspace = mutation({
         maxTokensPerSession: 4000,
         costLimitPerMonth: 50,
       },
+      usage: {
+        storage: 0,
+        aiTokens: 0,
+      },
       createdAt: Date.now(),
       updatedAt: Date.now(),
     });
 
-    // Register default tool manifests
+    // 3. Automatically grant 'owner' permission to the creator
+    await ctx.db.insert('permissions', {
+      workspaceId,
+      userId: identity.tokenIdentifier,
+      role: 'owner',
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+    });
+
+    // 4. Register default tools
     const defaultTools = [
       {
         toolId: 'search_web',
@@ -59,24 +80,6 @@ export const initializeWorkspace = mutation({
               content: { type: 'string' },
             },
             required: ['title', 'content'],
-          },
-        },
-        metadata: {},
-      },
-      {
-        toolId: 'execute_typescript',
-        name: 'TypeScript Executor',
-        version: '1.0.0',
-        type: 'builtin' as const,
-        category: 'utility' as const,
-        schema: {
-          description: 'Execute TypeScript code in a secure sandbox',
-          parameters: {
-            type: 'object',
-            properties: {
-              code: { type: 'string' },
-            },
-            required: ['code'],
           },
         },
         metadata: {},

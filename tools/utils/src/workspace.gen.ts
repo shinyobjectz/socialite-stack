@@ -1229,6 +1229,11 @@ export const PackageList = [
     workspaceDependencies: [],
   },
   {
+    name: '@socialite/db',
+    location: 'packages/convex',
+    workspaceDependencies: [],
+  },
+  {
     name: '@affine/admin',
     location: 'packages/frontend/admin',
     workspaceDependencies: [
@@ -1346,6 +1351,7 @@ export const PackageList = [
       'packages/common/env',
       'packages/common/error',
       'packages/common/graphql',
+      'packages/convex',
       'packages/frontend/i18n',
       'packages/common/nbstore',
       'packages/common/reader',
@@ -1574,6 +1580,7 @@ export type PackageName =
   | '@affine/nbstore'
   | '@affine/reader'
   | '@y-octo/node'
+  | '@socialite/db'
   | '@affine/admin'
   | '@affine/android'
   | '@affine/electron'

@@ -6,13 +6,20 @@
     "dev": "convex dev",
     "deploy": "convex deploy",
     "codegen": "convex codegen",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
-    "convex": "^1.11.0"
+    "convex": "^1.11.0",
+    "ai": "^5.0.108",
+    "@ai-sdk/openai": "^2.0.80",
+    "@ai-sdk/anthropic": "^2.0.54",
+    "@ai-sdk/google": "^2.0.45",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
+    "typescript": "^5.7.2",
     "convex-test": "^0.0.41",
-    "typescript": "^5.7.2"
+    "vitest": "^1.0.0"
   }
 }

@@ -21,23 +21,14 @@ async function main() {
   const localConvexUrl =
     process.env.LOCAL_CONVEX_URL || 'http://localhost:3210';
   const userRequest = process.env.USER_REQUEST;
-  const backendUrl = process.env.BACKEND_URL || 'http://localhost:3010';
-  const authToken = process.env.AUTH_TOKEN;
 
-  if (
-    !sessionId ||
-    !workspaceId ||
-    !cloudConvexUrl ||
-    !userRequest ||
-    !authToken
-  ) {
+  if (!sessionId || !workspaceId || !cloudConvexUrl || !userRequest) {
     console.error('[Sandbox] Missing required environment variables:');
     console.error({
       sessionId,
       workspaceId,
       cloudConvexUrl,
       userRequest,
-      hasAuthToken: !!authToken,
     });
     process.exit(1);
   }
@@ -49,8 +40,6 @@ async function main() {
     userId: userId || 'anonymous',
     cloudConvexUrl,
     localConvexUrl,
-    backendUrl,
-    authToken,
     agentConfig: {
       model: process.env.AGENT_MODEL || 'gpt-4o',
       instructions:

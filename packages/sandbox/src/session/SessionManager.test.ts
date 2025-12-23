@@ -59,8 +59,6 @@ describe('SessionManager', () => {
     userId: 'user_123',
     cloudConvexUrl: 'https://cloud.convex.dev',
     localConvexUrl: 'http://localhost:3210',
-    backendUrl: 'https://backend.test.com',
-    authToken: 'mock-token',
     agentConfig: {
       model: 'gpt-4o',
       instructions: 'Be helpful',
@@ -71,7 +69,7 @@ describe('SessionManager', () => {
   };
 
   test('SessionManager should run through lifecycle', async () => {
-    const manager = new SessionManager(config);
+    const manager = new SessionManager(config as any);
 
     await manager.start('Help me research AI');
 
@@ -79,7 +77,7 @@ describe('SessionManager', () => {
   });
 
   test('SessionManager should handle failures gracefully', async () => {
-    const manager = new SessionManager(config);
+    const manager = new SessionManager(config as any);
 
     // Force a failure by making initializeTools throw
     vi.spyOn(manager as any, 'initializeTools').mockRejectedValueOnce(

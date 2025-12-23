@@ -2,7 +2,7 @@ import { generateText, Tool as AiTool } from 'ai';
 import { z } from 'zod';
 import { ConvexClient } from 'convex/browser';
 import { ToolBus } from '../toolBus/ToolBus.js';
-import { BackendModel } from './BackendModel.js';
+import { ConvexModel } from './ConvexModel.js';
 
 export interface AgentConfig {
   name: string;
@@ -13,10 +13,10 @@ export interface AgentConfig {
 
 export interface MetaAgentConfig extends AgentConfig {
   sessionId: string;
+  workspaceId: string;
+  cloudConvexUrl: string;
   localConvexUrl: string;
   toolBus: ToolBus;
-  backendUrl: string;
-  authToken: string;
 }
 
 /**
@@ -24,15 +24,19 @@ export interface MetaAgentConfig extends AgentConfig {
  */
 export class OmegaAgent {
   public readonly id: string;
-  private model: BackendModel;
+  private model: ConvexModel;
   private instructions: string;
   private tools: Record<string, AiTool>;
 
-  constructor(config: AgentConfig, backendUrl: string, authToken: string) {
+  constructor(
+    config: AgentConfig,
+    workspaceId: string,
+    cloudConvexUrl: string
+  ) {
     this.id = config.name;
     this.instructions = config.instructions;
     this.tools = config.tools || {};
-    this.model = new BackendModel(config.model, backendUrl, authToken);
+    this.model = new ConvexModel(config.model, workspaceId, cloudConvexUrl);
   }
 
   async run(task: string): Promise<string> {
@@ -50,7 +54,7 @@ export class OmegaAgent {
  * MetaAgent is the orchestrator that plans and delegates tasks to OmegaAgents.
  */
 export class MetaAgent {
-  private model: BackendModel;
+  private model: ConvexModel;
   private instructions: string;
   private toolBus: ToolBus;
   private blackboard: ConvexClient;
@@ -62,10 +66,10 @@ export class MetaAgent {
     this.toolBus = config.toolBus;
     this.blackboard = new ConvexClient(config.localConvexUrl);
     this.instructions = config.instructions;
-    this.model = new BackendModel(
+    this.model = new ConvexModel(
       config.model,
-      config.backendUrl,
-      config.authToken
+      config.workspaceId,
+      config.cloudConvexUrl
     );
   }
 
