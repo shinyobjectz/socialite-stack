@@ -1,0 +1,26 @@
+{
+  "name": "@socialite/agent-sandbox",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "convex:dev": "convex dev",
+    "build": "tsup src/main.ts --format esm",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "convex": "^1.11.0",
+    "zod": "^3.23.8",
+    "ai": "^5.0.108",
+    "node-fetch": "^3.3.2",
+    "@modelcontextprotocol/sdk": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "tsx": "^4.11.0",
+    "tsup": "^8.0.2",
+    "vitest": "^3.2.4"
+  }
+}
